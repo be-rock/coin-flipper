@@ -1,5 +1,3 @@
-from domain.model import Coin
-
 
 def test_can_define_number_of_coin_flips(test_coin_fixture):
     assert test_coin_fixture.number_of_flips == 10

@@ -1,6 +1,6 @@
 import pytest
 
-from domain.model import Coin
+from src.domain.model import Coin
 
 
 @pytest.fixture()
