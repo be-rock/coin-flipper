@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.post("/flip/", response_model=CoinFlip)
 async def flip_coin(coinflip: CoinFlip):
-    coin = Coin(coinflip.times)
+    coin = Coin(coinflip.number_of_flips)
     result = coin.flip()
     coinflip.flip_results = dict(result)
     return coinflip
