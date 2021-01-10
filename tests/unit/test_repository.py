@@ -1,17 +1,23 @@
-from src.adapters.repository import FakeRepository
-
-
-def test_repository_add_items(fake_repository_fixture):
+def test_repository_add_items(fake_repository_fixture, coin_fixture):
     repo = fake_repository_fixture
-    repo.add(item={"asdf": "qwer"})
+    repo.add(item=coin_fixture)
     assert len(repo.items) == 1
-    assert "asdf" in repo.items[0]
+    assert repo.items[0].number_of_flips > 0
 
 
-def test_repository_delete_items(fake_repository_fixture):
+def test_repository_delete_items(fake_repository_fixture, coin_fixture):
     repo = fake_repository_fixture
     assert len(repo.items) == 0
-    repo.add(item={'asdf': 'qwer'})
+    repo.add(item=coin_fixture)
     assert len(repo.items) == 1
-    repo.delete({'asdf': 'qwer'})
+    repo.delete(coin_fixture)
     assert len(repo.items) == 0
+
+
+def test_repository_list_items(fake_repository_fixture, coin_fixture):
+    repo = fake_repository_fixture
+    assert len(repo.items) == 0
+    repo.add(item=coin_fixture)
+    results = repo.list()
+    assert len(results) == 1
+    assert isinstance(results[0], type(coin_fixture))

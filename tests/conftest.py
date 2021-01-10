@@ -12,6 +12,3 @@ def coin_fixture():
 @pytest.fixture()
 def fake_repository_fixture():
     yield FakeRepository()
-
-
-
