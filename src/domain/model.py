@@ -26,6 +26,6 @@ class CoinFlipBase(BaseModel):
 
 
 class CoinFlipResult(CoinFlipBase):
-    uuid: str = str(uuid.uuid4())
     number_of_flips: int
+    uuid: str = str(uuid.uuid4())
     flip_results: defaultdict = defaultdict(int)
