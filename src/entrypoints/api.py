@@ -1,15 +1,15 @@
 from fastapi import FastAPI
 
 from src.domain.model import Coin
-from src.domain.model import CoinFlip
+from src.domain.model import CoinFlipResult
 
 
 app = FastAPI()
 
 
-@app.post("/flip/", response_model=CoinFlip)
-async def flip_coin(coinflip: CoinFlip):
-    coin = Coin(coinflip.number_of_flips)
-    result = coin.flip()
+@app.post("/flip/", response_model=CoinFlipResult)
+async def flip_coin(coinflip: CoinFlipResult):
+    coin = Coin()
+    result = coin.flip(number_of_flips=coinflip.number_of_flips)
     coinflip.flip_results = dict(result)
     return coinflip

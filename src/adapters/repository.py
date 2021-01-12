@@ -31,19 +31,19 @@ class FakeRepository(AbstractRepository):
         return self.items
 
 
-# class SqlAlchemyRepository(AbstractRepository):
-#     def __init__(self, session_factory):
-#         self.session = session_factory()
-#
-#     def add(self, model_item) -> None:
-#         self.session.add(model_item)
-#
-#     def delete(self, model_item) -> None:
-#         self.session.delete(model_item)
-#
-#     def list(self, model_item, filters: dict = None) -> list:
-#         if filters:
-#             stmt = select(model_item).filter_by(**filters)
-#         else:
-#             stmt = select(model_item)
-#         return self.session.execute(stmt).all()
+class SqlAlchemyRepository(AbstractRepository):
+    def __init__(self, session_factory):
+        self.session = session_factory()
+
+    def add(self, model_item) -> None:
+        self.session.add(model_item)
+
+    def delete(self, model_item) -> None:
+        self.session.delete(model_item)
+
+    def list(self, model_item, filters: dict = None) -> list:
+        if filters:
+            stmt = select(model_item).filter_by(**filters)
+        else:
+            stmt = select(model_item)
+        return self.session.execute(stmt).all()

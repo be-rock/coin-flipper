@@ -1,8 +1,9 @@
 def test_repository_add_items(fake_repository_fixture, coin_fixture):
     repo = fake_repository_fixture
-    repo.add(item=coin_fixture)
+    number_of_flips = 10
+    results = coin_fixture.flip(number_of_flips=number_of_flips)
+    repo.add(item=results)
     assert len(repo.items) == 1
-    assert repo.items[0].number_of_flips > 0
 
 
 def test_repository_delete_items(fake_repository_fixture, coin_fixture):
