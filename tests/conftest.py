@@ -4,17 +4,12 @@ from sqlalchemy.orm import clear_mappers, sessionmaker
 
 from src.adapters.orm import metadata, start_mappers
 from src.adapters.repository import FakeRepository, SqlAlchemyRepository
-from src.domain.model import Coin, CoinFlipResult
+from src.domain.model import Coin
 
 
 @pytest.fixture()
 def coin_fixture():
     yield Coin()
-
-
-# @pytest.fixture()
-# def coin_flip_fixture():
-#     yield CoinFlipResult(number_of_flips=10)
 
 
 @pytest.fixture

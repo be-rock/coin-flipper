@@ -2,6 +2,7 @@ import random
 from collections import defaultdict
 import datetime
 import uuid
+from dataclasses import dataclass
 
 from pydantic import BaseModel
 
@@ -20,12 +21,9 @@ class Coin:
         return self.flip_results
 
 
-class CoinFlipBase(BaseModel):
-    """"""
-    request_time: datetime.datetime = datetime.datetime.now()
-
-
-class CoinFlipResult(CoinFlipBase):
+@dataclass
+class CoinFlipResult:
     number_of_flips: int
+    flip_results: dict
+    request_time: datetime.datetime = datetime.datetime.now()
     uuid: str = str(uuid.uuid4())
-    flip_results: defaultdict = defaultdict(int)
