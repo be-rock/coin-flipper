@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
-from src.domain.model import Coin
 from src.domain.api_schema import CoinFlipResult
-
+from src.domain.model import Coin
 
 app = FastAPI()
 

@@ -1,10 +1,8 @@
-import random
-from collections import defaultdict
 import datetime
+import random
 import uuid
+from collections import defaultdict
 from dataclasses import dataclass
-
-from pydantic import BaseModel
 
 
 class Coin:

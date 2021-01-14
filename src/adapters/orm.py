@@ -5,7 +5,7 @@ mapping between the domain model and the database model
 from sqlalchemy import Column, DateTime, Integer, JSON, String, Table
 from sqlalchemy.orm import registry
 
-from src.domain.model import CoinFlipResult
+from src.domain import model
 
 mapper_registry = registry()
 metadata = mapper_registry.metadata
@@ -22,4 +22,4 @@ coin_flip = Table(
 
 
 def start_mappers() -> None:
-    mapper_registry.map_imperatively(CoinFlipResult, coin_flip)
+    mapper_registry.map_imperatively(model.CoinFlipResult, coin_flip)
