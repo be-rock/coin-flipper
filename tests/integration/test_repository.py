@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy import select
 
-from src.domain.model import Coin, CoinFlipResult
+from coin_flipper.domain.model import Coin, CoinFlipResult
 
 pytestmark = pytest.mark.usefixtures("mappers")
 

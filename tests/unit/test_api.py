@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from src.entrypoints.api import app
+from coin_flipper.entrypoints.api import app
 
 client = TestClient(app)
 

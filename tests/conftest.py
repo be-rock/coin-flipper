@@ -2,9 +2,9 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import clear_mappers, sessionmaker
 
-from src.adapters.orm import metadata, start_mappers
-from src.adapters.repository import FakeRepository, SqlAlchemyRepository
-from src.domain.model import Coin
+from coin_flipper.adapters.orm import metadata, start_mappers
+from coin_flipper.adapters.repository import FakeRepository, SqlAlchemyRepository
+from coin_flipper.domain.model import Coin
 
 
 @pytest.fixture()

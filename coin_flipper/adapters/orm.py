@@ -5,7 +5,7 @@ mapping between the domain model and the database model
 from sqlalchemy import Column, DateTime, Integer, JSON, String, Table
 from sqlalchemy.orm import registry
 
-from src.domain import model
+from coin_flipper.domain import model
 
 mapper_registry = registry()
 metadata = mapper_registry.metadata
