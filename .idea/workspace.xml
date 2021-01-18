@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="292d1160-0ebb-433b-805a-2fcc1c06e66a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/.coverage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/coin_flipper/entrypoints/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coin_flipper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/coin_flipper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/tests/.coverage" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/unit/test_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="diff.base" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

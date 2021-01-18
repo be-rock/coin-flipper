@@ -1,6 +1,12 @@
+import logging
 import os
 
-from coin_flipper.settings import get_app_config, set_app_env_vars
+from coin_flipper.settings import (
+    get_app_config,
+    set_app_env_vars,
+    get_logger,
+    get_timed_file_handler,
+)
 
 
 def test_app_config_reader(tmp_path):
@@ -33,3 +39,16 @@ def test_env_setter(tmp_path):
     set_app_env_vars(p.absolute())
     assert os.getenv("k1") == "v1"
     assert os.getenv("k2") == "v2"
+
+
+def test_logger(tmp_path):
+    log_file = "test.log"
+    msg = "test logging info"
+    logger = get_logger(
+        logger_name=__name__,
+        handler=get_timed_file_handler(log_dir=tmp_path, log_file=log_file),
+    )
+    logger.info(msg)
+    with open(tmp_path / log_file, "r") as f:
+        contents = f.read().rstrip("\n")
+        assert msg in contents
