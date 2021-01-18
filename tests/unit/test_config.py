@@ -12,11 +12,12 @@ def test_app_config_reader(tmp_path):
       - x
       - y
     """
-    content = "a: \n  b\nc:\n  - x \n  - y\n"
+    content = "a:\n  b\nc:\n  - x \n  - y\n"
     p = tmp_path / "config.yaml"
     p.write_text(content)
-    config = get_app_config()
-    assert all([k in ["a", "b"] for k in config])
+    config = get_app_config(p)
+    assert ["a", "c"] == list(config.keys())  # dict keys
+    assert ["x", "y"] == config["c"]  # list items
     assert isinstance(config, dict)
 
 
