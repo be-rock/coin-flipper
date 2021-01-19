@@ -12,7 +12,7 @@ LOG_LEVEL = logging.DEBUG if DEBUG else logging.INFO
 LOG_FORMAT = "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
 LOG_FORMATTER = logging.Formatter(LOG_FORMAT)
 LOG_ROTATE_TIME = "midnight"
-LOG_HOME = os.getenv("LOG_DIR", ".")
+LOG_HOME = os.getenv("LOG_DIR", "/tmp")
 
 
 def get_config_path(file_name: str) -> Path:
