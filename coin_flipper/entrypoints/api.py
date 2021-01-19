@@ -10,6 +10,5 @@ app = FastAPI()
 async def flip_coin(coinflip: CoinFlipResult):
     coin = Coin()
     result = coin.flip(number_of_flips=coinflip.number_of_flips)
-    print(result)
     coinflip.flip_results = dict(result)
     return coinflip

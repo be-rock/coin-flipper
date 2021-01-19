@@ -20,3 +20,6 @@ A basic coin flipper simulation as suggested by: https://github.com/karan/Projec
 - [ ] docker
 - [ ] 100% test coverage
 - [ ] config / .env
+- [ ] versioned api
+- [ ] https
+- [ ] http basic auth

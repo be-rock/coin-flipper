@@ -4,13 +4,13 @@ import uuid
 from collections import defaultdict
 from dataclasses import dataclass
 
+from coin_flipper.domain import events
+
 
 class Coin:
-    # def __init__(self, number_of_flips: int = 0):
     def __init__(self):
-        # self.number_of_flips = number_of_flips
-        # self.coin_type = coin_type
         self.flip_results: defaultdict = defaultdict(int)
+        self.events_: list[events.Event] = []
 
     def flip(self, number_of_flips) -> dict:
         for _ in range(number_of_flips):
