@@ -12,6 +12,7 @@ def handle(event: events.Event):
 def request_coin_flip(event: events.CoinFlipRequested):
     return services.flip_coin(event.number_of_times)
 
+
 HANDLERS: dict[events, list[Callable]] = {
     events.CoinFlipRequested: [request_coin_flip],
 }

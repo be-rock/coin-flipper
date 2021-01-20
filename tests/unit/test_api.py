@@ -1,8 +1,8 @@
 from fastapi.testclient import TestClient
 
-from coin_flipper.entrypoints.api import app
+from coin_flipper.entrypoints.api.routes import router
 
-client = TestClient(app)
+client = TestClient(router)
 
 
 def test_flip_coin_via_api_entrypoint():

@@ -8,4 +8,3 @@ def flip_coin(number_of_flips) -> dict:
         result = random.choice(["heads", "tails"])
         flip_results[result] += 1
     return flip_results
-
