@@ -8,11 +8,8 @@ from collections import defaultdict
 from pydantic import BaseModel
 
 
-class ApiBaseModel(BaseModel):
-    request_time: datetime.datetime = datetime.datetime.now()
-
-
-class CoinFlipResult(ApiBaseModel):
+class CoinFlipResult(BaseModel):
+    request_time: datetime.datetime
+    uuid: str
     number_of_flips: int
-    uuid: str = str(uuid.uuid4())
     flip_results: defaultdict = defaultdict(int)

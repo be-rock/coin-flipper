@@ -19,12 +19,12 @@ An implementation of a coin flipper as suggested by...
 
 ## Todo 
 
+- [ ] versioned api / routers
 - [ ] coinflip api /results/{flipid}
 - [ ] precommit integration
 - [ ] unit of work pattern
 - [ ] docker
 - [ ] 100% test coverage
-- [ ] versioned api / routers
 - [ ] logger decorator
 - [ ] https
 - [ ] http basic auth
