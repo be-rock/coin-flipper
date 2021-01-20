@@ -42,6 +42,16 @@ class SqlAlchemyRepository(AbstractRepository):
         self.session.delete(model_item)
 
     def list(self, model_item, filters: dict = None) -> list:
+        """
+        : model_item: sqlalchemy mapped orm model
+        : filters: keyword arguments that match to column keys or ORM attribute names
+              example:
+                  select(User).filter_by(name='spongebob', fullname='Spongebob Squarepants')
+                  equates to:
+                  ...
+                  WHERE user_account.name = :name_1 AND user_account.fullname = :fullname_1
+                  ...
+        """
         if filters:
             stmt = select(model_item).filter_by(**filters)
         else:
