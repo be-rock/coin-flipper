@@ -28,11 +28,10 @@ scripts/run_app.sh
 Once the API is up and running, swagger docs can be accessed
 from:
 
-`http://hostname/port/ocs`
+`http://hostname/port/docs`
 
 Where `hostname` and `port` are specified in environment variables
 or overridden in `scripts/run_app.sh`
-
 
 
 ## Todo 
