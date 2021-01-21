@@ -4,7 +4,7 @@ import uuid
 from fastapi import APIRouter
 
 from coin_flipper.domain.api_schema import CoinFlipResult
-from coin_flipper.domain.events import CoinFlipRequested
+from coin_flipper.domain.events import CoinFlipRequested, CoinFlipInfoRequested
 from coin_flipper.service_layer import messagebus
 
 router = APIRouter()
@@ -20,3 +20,9 @@ async def flip_coin(number_of_flips: int):
         uuid=str(uuid.uuid4()),
         request_time=datetime.datetime.now(),
     )
+
+@router.get("/flip/results/{uuid}", response_model=CoinFlipInfoRequested)
+async def flip_coin_results(uuid: str):
+    event = CoinFlipInfoRequested(uuid=uuid)
+    result = messagebus.handle(event=event)
+    return {'a': 'b'}

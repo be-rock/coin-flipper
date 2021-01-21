@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
 
-from sqlalchemy import select
+from sqlalchemy import create_engine, select
+from sqlalchemy.orm import sessionmaker
+
+from coin_flipper.adapters.orm import metadata
 
 
 class AbstractRepository(ABC):
@@ -57,3 +60,13 @@ class SqlAlchemyRepository(AbstractRepository):
         else:
             stmt = select(model_item)
         return self.session.execute(stmt).all()
+
+
+def on_disk_sqlite_db():
+    engine = create_engine("sqlite:////tmp/test.db", future=True)
+    metadata.create_all(engine)
+    return engine
+
+
+def sqlite_on_disk_session_factory(db=on_disk_sqlite_db):
+    yield sessionmaker(bind=db, future=True)
