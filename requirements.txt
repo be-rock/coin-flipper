@@ -1,4 +1,4 @@
-name: fastapi_app
+name: coin-flipper-app
 channels:
   - defaults
 dependencies:
@@ -33,4 +33,3 @@ dependencies:
     - sqlalchemy==1.4.0b1
     - starlette==0.13.6
     - uvicorn==0.13.3
-prefix: /home/brock/miniconda/envs/fastapi_app
