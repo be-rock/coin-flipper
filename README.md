@@ -17,6 +17,24 @@ An implementation of a coin flipper as suggested by...
 - [X] Database Integration (Repository Pattern)
 - [X] Domain Model
 
+## How to run
+
+The app can be initiated with the provided:
+
+```shell
+scripts/run_app.sh
+```
+
+Once the API is up and running, swagger docs can be accessed
+from:
+
+`http://hostname/port/ocs`
+
+Where `hostname` and `port` are specified in environment variables
+or overridden in `scripts/run_app.sh`
+
+
+
 ## Todo 
 
 - [ ] versioned api / routers

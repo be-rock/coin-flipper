@@ -2,7 +2,6 @@
 the domain model as represented by the api
 """
 import datetime
-import uuid
 from collections import defaultdict
 
 from pydantic import BaseModel

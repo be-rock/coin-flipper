@@ -1,0 +1,36 @@
+name: fastapi_app
+channels:
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1
+  - ca-certificates=2021.1.19
+  - certifi=2020.12.5
+  - ld_impl_linux-64=2.33.1
+  - libedit=3.1.20191231
+  - libffi=3.3
+  - libgcc-ng=9.1.0
+  - libstdcxx-ng=9.1.0
+  - ncurses=6.2
+  - openssl=1.1.1i
+  - pip=20.3.3
+  - python=3.9.1
+  - pyyaml=5.3.1
+  - readline=8.0
+  - setuptools=51.3.3
+  - sqlite=3.33.0
+  - tk=8.6.10
+  - tzdata=2020f
+  - wheel=0.36.2
+  - xz=5.2.5
+  - yaml=0.2.5
+  - zlib=1.2.11
+  - pip:
+    - click==7.1.2
+    - fastapi==0.63.0
+    - greenlet==1.0.0
+    - h11==0.12.0
+    - pydantic==1.7.3
+    - sqlalchemy==1.4.0b1
+    - starlette==0.13.6
+    - uvicorn==0.13.3
+prefix: /home/brock/miniconda/envs/fastapi_app
