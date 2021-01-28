@@ -62,11 +62,11 @@ class SqlAlchemyRepository(AbstractRepository):
         return self.session.execute(stmt).all()
 
 
-def on_disk_sqlite_db():
-    engine = create_engine("sqlite:////tmp/test.db", future=True)
-    metadata.create_all(engine)
-    return engine
+# def on_disk_sqlite_db():
+#     engine = create_engine("sqlite:////tmp/test.db", future=True)
+#     metadata.create_all(engine)
+#     return engine
 
 
-def sqlite_on_disk_session_factory(db=on_disk_sqlite_db):
-    yield sessionmaker(bind=db, future=True)
+# def sqlite_on_disk_session_factory(db=on_disk_sqlite_db):
+#     yield sessionmaker(bind=db, future=True)
