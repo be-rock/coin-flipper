@@ -13,8 +13,6 @@ def test_flip_coin_via_api_entrypoint():
     response = client.post(f"{API_PREFIX}/flip/{number_of_flips}")
     assert response.status_code == 200
     resp_json = response.json()
-    # print(resp_json)
-    # print(resp_json['flip_results'])
     assert (
         resp_json["flip_results"]["heads"] + resp_json["flip_results"]["tails"]
         == resp_json["number_of_flips"]

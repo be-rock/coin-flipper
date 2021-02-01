@@ -8,11 +8,11 @@ import yaml
 APP_ENV = os.environ.get("APP_ENV", "dev")  # dev, tst, prd
 DEBUG = True if os.environ.get("DEBUG", "").lower().startswith("y") else False
 LOG_FILE = "app.log"
-LOG_LEVEL = logging.DEBUG if DEBUG else logging.INFO
 LOG_FORMAT = "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
 LOG_FORMATTER = logging.Formatter(LOG_FORMAT)
-LOG_ROTATE_TIME = "midnight"
 LOG_HOME = os.getenv("LOG_DIR", "/tmp")
+LOG_LEVEL = logging.DEBUG if DEBUG else logging.INFO
+LOG_ROTATE_TIME = "midnight"
 
 
 def get_config_path(file_name: str) -> Path:

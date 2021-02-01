@@ -1,7 +1,3 @@
-import dataclasses
-import datetime
-import uuid
-
 from fastapi import APIRouter
 
 from coin_flipper.domain.api_schema import CoinFlipResultApi
@@ -19,8 +15,9 @@ async def flip_coin(number_of_flips: int):
         number_of_flips=result.number_of_flips,
         flip_results=result.flip_results,
         uuid=result.uuid,
-        request_time=result.request_time
+        request_time=result.request_time,
     )
+
 
 # @router.get("/flip/results/{uuid}", response_model=CoinFlipInfoRequested)
 # async def flip_coin_results(uuid: str):

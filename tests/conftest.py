@@ -5,6 +5,7 @@ from sqlalchemy.orm import clear_mappers, sessionmaker
 from coin_flipper.adapters.orm import metadata, start_mappers
 from coin_flipper.adapters.repository import FakeRepository, SqlAlchemyRepository
 from coin_flipper.domain.model import Coin
+from coin_flipper.service_layer.unit_of_work import SqlAlchemyUnitOfWork
 
 
 @pytest.fixture()
@@ -26,7 +27,7 @@ def sqlite_in_memory_session_factory(in_memory_sqlite_db):
 
 @pytest.fixture()
 def sqlalchemy_in_memory_fixture(sqlite_in_memory_session_factory):
-    yield SqlAlchemyRepository(session_factory=sqlite_in_memory_session_factory)
+    yield SqlAlchemyRepository(session=sqlite_in_memory_session_factory())
 
 
 @pytest.fixture
@@ -43,7 +44,7 @@ def sqlite_on_disk_session_factory(on_disk_sqlite_db):
 
 @pytest.fixture()
 def sqlalchemy_on_disk_fixture(sqlite_on_disk_session_factory):
-    yield SqlAlchemyRepository(session_factory=sqlite_on_disk_session_factory)
+    yield SqlAlchemyRepository(session=sqlite_on_disk_session_factory())
 
 
 @pytest.fixture()

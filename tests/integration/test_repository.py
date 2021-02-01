@@ -9,6 +9,7 @@ def test_sqlalchemy_session_is_valid(sqlalchemy_on_disk_fixture):
     repo = sqlalchemy_on_disk_fixture
     assert repo.session.is_active
 
+
 def test_sqlalchemy_repository_create_coinflip_model_item(sqlalchemy_on_disk_fixture):
     repo = sqlalchemy_on_disk_fixture
     flip_num = 10

@@ -2,7 +2,7 @@ import random
 from collections import defaultdict
 
 # from coin_flipper.adapters.repository import SqlAlchemyRepository, on_disk_sqlite_db, sqlite_on_disk_session_factory
-from coin_flipper.domain.api_schema import CoinFlipResultApi
+# from coin_flipper.domain.api_schema import CoinFlipResultApi
 from coin_flipper.domain.model import CoinFlipResult
 
 

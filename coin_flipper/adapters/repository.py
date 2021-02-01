@@ -35,8 +35,11 @@ class FakeRepository(AbstractRepository):
 
 
 class SqlAlchemyRepository(AbstractRepository):
-    def __init__(self, session_factory):
-        self.session = session_factory()
+    # def __init__(self, session_factory):
+    # def __init__(self, session_factory):
+    #     self.session = session_factory()
+    def __init__(self, session):
+        self.session = session
 
     def add(self, model_item) -> None:
         self.session.add(model_item)
@@ -60,13 +63,3 @@ class SqlAlchemyRepository(AbstractRepository):
         else:
             stmt = select(model_item)
         return self.session.execute(stmt).all()
-
-
-# def on_disk_sqlite_db():
-#     engine = create_engine("sqlite:////tmp/test.db", future=True)
-#     metadata.create_all(engine)
-#     return engine
-
-
-# def sqlite_on_disk_session_factory(db=on_disk_sqlite_db):
-#     yield sessionmaker(bind=db, future=True)
