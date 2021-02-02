@@ -12,7 +12,10 @@ from coin_flipper import APP_ENV, CONFIG
 from coin_flipper.adapters.repository import FakeRepository
 
 DEFAULT_SESSION_FACTORY = sessionmaker(
-    bind=create_engine(CONFIG["db"][APP_ENV]["uri"]), future=True
+    bind=create_engine(CONFIG["db"][APP_ENV]["uri"]),
+    future=True,
+    autoflush=False,
+    autocommit=False,
 )
 
 # def on_disk_sqlite_db():

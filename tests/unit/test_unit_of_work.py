@@ -12,9 +12,7 @@ def get_flip_results() -> CoinFlipResult:
     flip_num = 10
     coin = Coin()
     results = coin.flip(number_of_flips=flip_num)
-    return CoinFlipResult(
-        number_of_flips=flip_num, flip_results=dict(results)
-    )
+    return CoinFlipResult(number_of_flips=flip_num, flip_results=dict(results))
 
 
 def test_uow_commits_transaction():

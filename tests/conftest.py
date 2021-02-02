@@ -39,7 +39,9 @@ def on_disk_sqlite_db():
 
 @pytest.fixture
 def sqlite_on_disk_session_factory(on_disk_sqlite_db):
-    yield sessionmaker(bind=on_disk_sqlite_db, future=True)
+    yield sessionmaker(
+        bind=on_disk_sqlite_db, future=True, autocommit=False, autoflush=False
+    )
 
 
 @pytest.fixture()

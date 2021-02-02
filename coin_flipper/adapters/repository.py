@@ -1,9 +1,6 @@
 from abc import ABC, abstractmethod
 
-from sqlalchemy import create_engine, select
-from sqlalchemy.orm import sessionmaker
-
-from coin_flipper.adapters.orm import metadata
+from sqlalchemy import select
 
 
 class AbstractRepository(ABC):
@@ -54,6 +51,7 @@ class SqlAlchemyRepository(AbstractRepository):
                   ...
                   WHERE user_account.name = :name_1 AND user_account.fullname = :fullname_1
                   ...
+        ref: https://docs.sqlalchemy.org/en/latest/orm/queryguide.html
         """
         if filters:
             stmt = select(model_item).filter_by(**filters)
