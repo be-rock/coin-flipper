@@ -35,9 +35,6 @@ class FakeRepository(AbstractRepository):
 
 
 class SqlAlchemyRepository(AbstractRepository):
-    # def __init__(self, session_factory):
-    # def __init__(self, session_factory):
-    #     self.session = session_factory()
     def __init__(self, session):
         self.session = session
 

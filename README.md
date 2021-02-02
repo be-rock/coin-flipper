@@ -8,9 +8,18 @@ An implementation of a coin flipper as suggested by...
 >coin however many times the user decides. The code should record the 
 >outcomes and count the number of tails and heads.
 
-...with influences from the [Architecture Patterns with Python book](https://www.cosmicpython.com/#buy_the_book). 
+...with influences from:
 
-## App Components:
+- the (excellent) [Architecture Patterns with Python book](https://www.cosmicpython.com/#buy_the_book)
+- [Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
+- [Hexagonal / Ports and Adapters Architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+## App Purpose
+
+Given a simple domain (coin flip), apply principles of TDD, DDD, and the above architectures.
+
+## App Components
 
 - [X] Coin Flipper REST API
 - [X] Event-Driven Architecture
@@ -36,7 +45,6 @@ or overridden in `scripts/run_app.sh`
 
 ## Todo 
 
-- [ ] versioned api / routers
 - [ ] coinflip api /results/{flipid}
 - [ ] precommit integration
 - [ ] unit of work pattern
@@ -45,4 +53,5 @@ or overridden in `scripts/run_app.sh`
 - [ ] logger decorator
 - [ ] https
 - [ ] http basic auth
-- [ ] Coin Flipper CLI
+- [ ] paginated api
+- [ ] Coin Flipper CLI (typer? golang?)
