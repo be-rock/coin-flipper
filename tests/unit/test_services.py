@@ -14,14 +14,14 @@ pytestmark = pytest.mark.usefixtures("mappers")
 #         print('test')
 
 
-def test_coin_flip_event():
-    number_of_flips_from_the_api = 10
-    event = CoinFlipRequested(number_of_times=number_of_flips_from_the_api)
-    result = messagebus.handle(event=event)
-    assert (
-        result.flip_results["heads"] + result.flip_results["tails"]
-        == number_of_flips_from_the_api
-    )
+# def test_coin_flip_event():
+#     number_of_flips_from_the_api = 10
+#     event = CoinFlipRequested(number_of_times=number_of_flips_from_the_api)
+#     result = messagebus.handle(event=event)
+#     assert (
+#         result.flip_results["heads"] + result.flip_results["tails"]
+#         == number_of_flips_from_the_api
+#     )
 
 
 # def test_coin_flip_results(sqlalchemy_in_memory_fixture):
