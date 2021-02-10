@@ -3,4 +3,5 @@ sqlalchemy==1.4.0b1
 pytest
 pytest-cov
 pyyaml
+requests
 uvicorn
