@@ -8,6 +8,7 @@ from coin_flipper.service_layer import services
 #     for handler in HANDLERS[type(event)]:
 #         return handler(event)
 
+
 def command_handler(command: commands.Command):
     for handler in HANDLERS[type(command)]:
         return handler(command)

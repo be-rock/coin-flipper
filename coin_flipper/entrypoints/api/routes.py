@@ -7,7 +7,9 @@ from coin_flipper.service_layer import messagebus
 router = APIRouter()
 
 
-@router.post("/flip/{number_of_flips}", response_model=CoinFlipResultApi, status_code=201)
+@router.post(
+    "/flip/{number_of_flips}", response_model=CoinFlipResultApi, status_code=201
+)
 async def flip_coin(number_of_flips: int):
     command = commands.FlipCoin(number_of_times=number_of_flips)
     result = messagebus.command_handler(command=command)
