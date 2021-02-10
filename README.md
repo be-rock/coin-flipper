@@ -21,10 +21,11 @@ Given a simple domain (coin flip), apply principles of TDD, DDD, and the above a
 
 ## App Components
 
-- [X] Coin Flipper REST API
-- [X] Event-Driven Architecture
-- [X] Database Integration (Repository Pattern)
 - [X] Domain Model
+- [X] Event-Driven Architecture
+- [X] Coin Flipper REST API
+- [X] Database Integration (Repository Pattern)
+- [X] 100% Test Coverage
 
 ## How to run
 
@@ -37,21 +38,17 @@ scripts/run_app.sh
 Once the API is up and running, swagger docs can be accessed
 from:
 
-`http://hostname/port/docs`
+`http://localhost/8080/docs`
 
-Where `hostname` and `port` are specified in environment variables
-or overridden in `scripts/run_app.sh`
-
-
-## Todo 
+## Todo
 
 - [ ] coinflip api /results/{flipid}
+- [ ] paginated api results
+- [ ] proper CQRS
 - [ ] precommit integration
-- [ ] unit of work pattern
 - [ ] docker
-- [ ] 100% test coverage
 - [ ] logger decorator
 - [ ] https
 - [ ] http basic auth
-- [ ] paginated api
 - [ ] Coin Flipper CLI (typer? golang?)
+- [ ] github automatic test integration
