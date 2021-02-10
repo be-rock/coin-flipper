@@ -34,16 +34,6 @@ def get_app_config(config_file: str = "app-conf.yaml") -> dict:
         return yaml.safe_load(y)
 
 
-def set_app_env_vars(env_file: str = ".env") -> None:
-    """dotenv config reader"""
-    p = get_config_path(env_file)
-    with open(p.absolute(), "r") as f:
-        data = f.read()
-        for item in data.rstrip("\n").split("\n"):
-            k, v = item.split("=")
-            os.environ[k] = v
-
-
 def get_timed_file_handler(
     log_dir: str = LOG_HOME,
     log_file: str = LOG_FILE,

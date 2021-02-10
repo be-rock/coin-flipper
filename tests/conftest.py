@@ -5,7 +5,6 @@ from sqlalchemy.orm import clear_mappers, sessionmaker
 from coin_flipper.adapters.orm import metadata, start_mappers
 from coin_flipper.adapters.repository import FakeRepository, SqlAlchemyRepository
 from coin_flipper.domain.model import Coin
-from coin_flipper.service_layer.unit_of_work import SqlAlchemyUnitOfWork
 
 
 @pytest.fixture()
