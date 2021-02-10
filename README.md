@@ -1,5 +1,7 @@
 # coin-flipper
 
+[![Build Status](https://travis-ci.com/be-rock/coin-flipper.svg?branch=main)](https://travis-ci.com/be-rock/coin-flipper)
+
 An implementation of a coin flipper as suggested by...
 
 >https://github.com/karan/Projects
@@ -38,7 +40,7 @@ scripts/run_app.sh
 Once the API is up and running, swagger docs can be accessed
 from:
 
-`http://localhost/8080/docs`
+[http://localhost/8080/docs](http://localhost/8080/docs)
 
 ## Todo
 
