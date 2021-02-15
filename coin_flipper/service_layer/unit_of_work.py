@@ -16,17 +16,8 @@ DEFAULT_SESSION_FACTORY = sessionmaker(
     future=True,
     autoflush=False,
     autocommit=False,
+    expire_on_commit=False
 )
-
-# def on_disk_sqlite_db():
-#     engine = create_engine("sqlite:////tmp/test.db", future=True)
-#     metadata.create_all(engine)
-#     return engine
-
-# def sqlite_on_disk_session_factory(db=on_disk_sqlite_db):
-#     yield sessionmaker(bind=db, future=True)
-#
-
 
 class AbstractUnitOfWork(abc.ABC):
     batches: repository.AbstractRepository

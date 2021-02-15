@@ -1,3 +1,4 @@
+import pytest
 from fastapi.testclient import TestClient
 
 from coin_flipper.entrypoints.api.routes import router
@@ -6,6 +7,8 @@ from coin_flipper.entrypoints.api.app import app, API_PREFIX
 
 app.include_router(router, prefix=API_PREFIX)
 client = TestClient(app)
+
+pytestmark = pytest.mark.usefixtures("mappers")
 
 
 def test_flip_coin_via_api_entrypoint():

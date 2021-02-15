@@ -55,6 +55,7 @@ def fake_repository_fixture():
 
 @pytest.fixture
 def mappers():
+    clear_mappers()
     start_mappers()
     yield
     clear_mappers()
