@@ -1,3 +1,7 @@
 db:
   dev:
     uri: sqlite:////tmp/test.db
+  test:
+    uri: sqlite:////tmp/test.db
+  prod:
+    uri: sqlite:////tmp/app.db

@@ -1,12 +1,16 @@
 from fastapi import FastAPI
+from sqlalchemy import create_engine
 
+from coin_flipper import APP_ENV, CONFIG
 from coin_flipper.entrypoints.api.routes import router as api_router
-from coin_flipper.adapters.orm import start_mappers
+from coin_flipper.adapters.orm import metadata, start_mappers
 
 SUPPORTED_API_VERSION = 1
 API_PREFIX = "/api"
-
 app = FastAPI()
+
+# todo - entrypoint tightly-coupled to orm
+metadata.create_all(create_engine(CONFIG["db"][APP_ENV]["uri"]))
 start_mappers()
 
 
