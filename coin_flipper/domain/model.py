@@ -23,5 +23,5 @@ class Coin:
 class CoinFlipResult:
     number_of_flips: int
     flip_results: dict
-    request_time: datetime.datetime = datetime.datetime.now()
-    uuid: str = str(uuid.uuid4())
+    request_time: datetime.datetime
+    uuid: str

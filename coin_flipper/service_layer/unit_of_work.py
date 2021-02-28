@@ -1,5 +1,6 @@
 """
-An abstraction over the components of the repository such as a 'session' or when to 'commit' a transaction
+An abstraction over the components of the repository such as a 'session' or
+when to 'commit' a transaction
 """
 
 import abc
@@ -16,8 +17,9 @@ DEFAULT_SESSION_FACTORY = sessionmaker(
     future=True,
     autoflush=False,
     autocommit=False,
-    expire_on_commit=False
+    expire_on_commit=False,
 )
+
 
 class AbstractUnitOfWork(abc.ABC):
     batches: repository.AbstractRepository
@@ -62,7 +64,6 @@ class SqlAlchemyUnitOfWork(AbstractUnitOfWork):
     def __enter__(self):
         self.session = self.session_factory()
         self.repo = repository.SqlAlchemyRepository(self.session)
-        # return super().__enter__()
 
     def __exit__(self, *args):
         super().__exit__(*args)

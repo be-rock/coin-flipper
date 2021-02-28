@@ -1,7 +1,8 @@
+codecov
 fastapi
-sqlalchemy==1.4.0b1
 pytest
 pytest-cov
 pyyaml
 requests
+sqlalchemy==1.4.0b1
 uvicorn

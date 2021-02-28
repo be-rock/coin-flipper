@@ -9,5 +9,5 @@ def request_coin_flip(command: commands.FlipCoin) -> CoinFlipResult:
     return flip_result
 
 
-# def request_coin_flip_info(event: events.CoinFlipInfoRequested):
-#     return services.retrieve_coin_flip_info(uuid=event.uuid)
+def request_coin_flip_info(event: events.CoinFlipInfoRequested):
+    return services.retrieve_coin_flip_info(uuid=event.uuid)

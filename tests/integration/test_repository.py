@@ -13,17 +13,17 @@ def test_sqlalchemy_session_is_valid(sqlite_on_disk_session_factory):
 
 
 def test_sqlalchemy_repository_create_and_persist_coinflip_model_item(
-    sqlite_on_disk_session_factory,
+    sqlite_on_disk_session_factory, coin_flip_result_fixture
 ):
-    flip_num = 10
-    coin = Coin()
-    results = coin.flip(number_of_flips=flip_num)
-    flip_model_obj = CoinFlipResult(
-        number_of_flips=flip_num, flip_results=dict(results)
-    )
+    # flip_num = 10
+    # coin = Coin()
+    # results = coin.flip(number_of_flips=flip_num)
+    # flip_model_obj = CoinFlipResult(
+    #     number_of_flips=flip_num, flip_results=dict(results)
+    # )
     uow = SqlAlchemyUnitOfWork(session_factory=sqlite_on_disk_session_factory)
     with uow:
-        uow.repo.add(flip_model_obj)
+        uow.repo.add(coin_flip_result_fixture)
         uow.commit()
         assert len(uow.repo.list(model_item=CoinFlipResult)) == 1
         assert (
@@ -33,6 +33,6 @@ def test_sqlalchemy_repository_create_and_persist_coinflip_model_item(
     # model still exists in a new uow
     with uow:
         assert len(uow.repo.list(model_item=CoinFlipResult)) == 1
-        uow.repo.delete(model_item=flip_model_obj)
+        uow.repo.delete(model_item=coin_flip_result_fixture)
         uow.commit()
         assert len(uow.repo.list(model_item=CoinFlipResult)) == 0
