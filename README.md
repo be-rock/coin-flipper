@@ -1,6 +1,7 @@
 # coin-flipper
 
 [![Build Status](https://travis-ci.com/be-rock/coin-flipper.svg?branch=main)](https://travis-ci.com/be-rock/coin-flipper)
+[![codecov.io](https://codecov.io/github/be-rock/coin-flipper/coverage.svg?branch=main)]
 
 An implementation of a coin flipper as suggested by...
 
