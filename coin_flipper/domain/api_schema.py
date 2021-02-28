@@ -13,3 +13,10 @@ class CoinFlipResultApi(BaseModel):
     uuid: str = uuid.uuid4()
     number_of_flips: int
     flip_results: defaultdict = defaultdict(int)
+
+
+class CoinFlipInfoRequestedApi(BaseModel):
+    request_time: datetime.datetime
+    uuid: str
+    number_of_flips: int
+    flip_results: dict

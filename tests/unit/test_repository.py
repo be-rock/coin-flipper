@@ -1,5 +1,3 @@
-
-
 def test_repository_add_items(fake_repository_fixture, coin_fixture):
     repo = fake_repository_fixture
     number_of_flips = 10

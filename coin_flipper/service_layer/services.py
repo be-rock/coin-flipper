@@ -1,4 +1,6 @@
+import datetime
 import os
+import uuid
 import random
 from collections import defaultdict
 
@@ -15,7 +17,12 @@ def flip_coin(number_of_flips) -> CoinFlipResult:
     for _ in range(number_of_flips):
         result = random.choice(["heads", "tails"])
         flip_results[result] += 1
-    return CoinFlipResult(number_of_flips=number_of_flips, flip_results=flip_results)
+    return CoinFlipResult(
+        uuid=str(uuid.uuid4()),
+        request_time=datetime.datetime.now(),
+        number_of_flips=number_of_flips,
+        flip_results=flip_results,
+    )
 
 
 def persist_flip_results_to_repository(
@@ -32,10 +39,12 @@ def persist_flip_results_to_repository(
         uow.commit()
 
 
-# def retrieve_coin_flip_info(
-#     uuid: uuid.uuid4, uow: AbstractUnitOfWork = None
-# ) -> list[CoinFlipResult]:
-#     if not uow:
-#         uow = SqlAlchemyUnitOfWork()
-#     result = uow.repo.list(model_item=CoinFlipResult, filters={"uuid": uuid})
-#     return result
+def retrieve_coin_flip_info(
+    uuid: uuid.uuid4, uow: AbstractUnitOfWork = None
+) -> CoinFlipResult:
+    uow = SqlAlchemyUnitOfWork() if uow is None else uow
+    with uow:
+        result = uow.session.execute(
+            "SELECT * FROM coin_flip WHERE uuid = :uuid", dict(uuid=uuid)
+        ).fetchone()
+    return result
