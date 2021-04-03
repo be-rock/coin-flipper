@@ -32,21 +32,8 @@ async def flip_coin(number_of_flips: int):
 async def flip_coin_results(uuid: str):
     logger.info(f"http get to '/flip/results/{uuid}'")
     event = CoinFlipInfoRequested(uuid=uuid)
-    logger.info(f"event: {event}")
     result = messagebus.event_handler(event=event)
     _result = dict(zip(result.keys(), result))
-    logger.info(f"http get result: {_result}")
-    logger.info(f"flip_results: {_result['flip_results']}")
-    logger.info(f"flip_results: {type(_result['flip_results'])}")
-    logger.info(f"flip_results: {dir(_result['flip_results'])}")
-    # logger.info(f"http get result: {result.keys()}")
-    # logger.info(f"http get result: {dict(zip(result.keys(), result))}")
-    # logger.info(f"http get result: {dir(result)}")
-    # _result = result._as_dict()
-    # logger.info(f"http get result: {_result}")
-    # logger.info(f"types: {type(result)}")
-    # logger.info(f"types: {type(result._as_dict())}")
-    # logger.info(f"value as dict: {result._as_dict()}")
     return CoinFlipInfoRequestedApi(
         uuid=_result["uuid"],
         request_time=_result["request_time"],

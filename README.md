@@ -45,13 +45,10 @@ from:
 
 ## Todo
 
-- [ ] coinflip api /results/{flipid}
 - [ ] paginated api results
 - [ ] proper CQRS
-- [ ] precommit integration
 - [ ] docker
 - [ ] logger decorator
 - [ ] https
 - [ ] http basic auth
 - [ ] Coin Flipper CLI (typer? golang?)
-- [ ] github automatic test integration
